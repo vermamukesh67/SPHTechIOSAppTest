@@ -1,0 +1,6 @@
+framework module Pods_SPHTechIOSAppTestTests {
+  umbrella header "Pods-SPHTechIOSAppTestTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
