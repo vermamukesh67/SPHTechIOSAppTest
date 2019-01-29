@@ -26,25 +26,31 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.03834" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KR-Cd-VKG">
-                    <rect key="frame" x="105" y="10" width="200" height="40"/>
+                    <rect key="frame" x="105" y="10" width="210" height="40"/>
                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dti-gS-bet">
-                    <rect key="frame" x="320" y="10" width="40" height="40"/>
+                <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dti-gS-bet">
+                    <rect key="frame" x="330" y="15" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="aJk-hL-brd"/>
+                        <constraint firstAttribute="height" constant="30" id="Fik-UC-H46"/>
+                        <constraint firstAttribute="width" constant="30" id="aJk-hL-brd"/>
                     </constraints>
                     <state key="normal" image="expandIcon"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dti-gS-bet" secondAttribute="trailing" constant="15" id="7uw-qS-Rhp"/>
                 <constraint firstItem="HMp-cw-dg6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="8ej-Pq-x0N"/>
-                <constraint firstItem="dti-gS-bet" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="8g8-Ge-TKE"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dti-gS-bet" secondAttribute="bottom" constant="10" id="9z2-cy-KZS"/>
+                <constraint firstItem="dti-gS-bet" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IMA-EL-Qfz"/>
                 <constraint firstItem="1KR-Cd-VKG" firstAttribute="leading" secondItem="HMp-cw-dg6" secondAttribute="trailing" constant="30" id="RrV-Fl-NbF"/>
                 <constraint firstItem="1KR-Cd-VKG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="UHL-76-pQG"/>
                 <constraint firstItem="HMp-cw-dg6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="klu-76-jg9"/>
@@ -60,14 +66,6 @@
                 <outlet property="lblYearVolume" destination="1KR-Cd-VKG" id="7ph-E4-hLR"/>
             </connections>
         </view>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AP2-SD-pbH">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="242" y="-122"/>
-        </label>
     </objects>
     <resources>
         <image name="expandIcon" width="24" height="24"/>

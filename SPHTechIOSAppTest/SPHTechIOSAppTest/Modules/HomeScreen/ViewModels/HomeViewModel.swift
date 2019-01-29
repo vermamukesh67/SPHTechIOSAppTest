@@ -11,7 +11,7 @@ import Foundation
 class HomeViewModel
 {
     /// Data source for the home page table view.
-    var numberOfRecordsToLoadAtOneTime : Int = 10
+    var numberOfRecordsToLoadAtOneTime : Int = 50
     var nextPageUrl : String?
     var strResourceId : String? = "a807b7ab-6cad-4aa6-87d0-e283a7353a0f"
     var diccMobileDataConsumtion : [String : [Records]] = [String : [Records]]()
@@ -30,7 +30,7 @@ class HomeViewModel
         }
         
         viewDidLoad = { [weak self] in
-            self?.getMobileDataConsumptionFromNetwork(completion: {
+            self?.getMobileDataConsumptionFromNetwork(completionHandler: {
                 
                 self?.sortDataBasedOnYears()
                 self?.reloadTable()
@@ -41,18 +41,18 @@ class HomeViewModel
     /// Method call to inform the view model to refresh the data.
     func deleteAllDataAndRefreshScreen() {
         diccMobileDataConsumtion.removeAll()
-        self.getMobileDataConsumptionFromNetwork(completion: { [weak self] in
+        self.getMobileDataConsumptionFromNetwork(completionHandler: { [weak self] in
             self?.sortDataBasedOnYears()
             self?.reloadTable()
         })
     }
     
-    /// Method call to inform the view model to refresh the data.
+    // Method to load more data from server
     func loadMoreData() {
         
         if self.nextPageUrl != nil
         {
-            self.getMobileDataConsumptionFromNetwork(completion: { [weak self] in
+            self.getMobileDataConsumptionFromNetwork(completionHandler: { [weak self] in
                 
                 self?.sortDataBasedOnYears()
                 self?.reloadTable()
@@ -124,8 +124,34 @@ class HomeViewModel
         arrSortedYears = arrYears.sorted {$0.localizedStandardCompare($1) == .orderedAscending}
     }
     
+    func prepareDicAsPerYearWise(objRecord : Records)
+    {
+        if let strQuarter = objRecord.quarter
+        {
+            let year = strQuarter.components(separatedBy: "-")
+            if year.count > 0
+            {
+                let strYear = year[0]
+                
+                if self.diccMobileDataConsumtion[strYear] != nil
+                {
+                    var arrayData : [Records] = self.diccMobileDataConsumtion[strYear] ?? [Records]()
+                    arrayData.append(objRecord)
+                    self.diccMobileDataConsumtion.updateValue(arrayData, forKey: strYear)
+                }
+                else
+                {
+                    var arrayData : [Records] = [Records]()
+                    arrayData.append(objRecord)
+                    self.diccMobileDataConsumtion.updateValue(arrayData, forKey: strYear)
+                }
+            }
+        }
+        
+    }
+    
     // Get Mobile Data usage from api
-    func getMobileDataConsumptionFromNetwork(completion: @escaping ()->()) {
+    func getMobileDataConsumptionFromNetwork(completionHandler: @escaping ()->()) {
         
         if let nexturl = self.nextPageUrl
         {
@@ -136,45 +162,25 @@ class HomeViewModel
                     
                     for (_ , objRecord) in objMobileData.enumerated()
                     {
-                        if let strQuarter = objRecord.quarter
-                        {
-                            let year = strQuarter.components(separatedBy: "-")
-                            if year.count > 0
-                            {
-                                let strYear = year[0]
-                                
-                                if self.diccMobileDataConsumtion[strYear] != nil
-                                {
-                                    var arrayData : [Records] = self.diccMobileDataConsumtion[strYear] ?? [Records]()
-                                    arrayData.append(objRecord)
-                                    self.diccMobileDataConsumtion.updateValue(arrayData, forKey: strYear)
-                                }
-                                else
-                                {
-                                    var arrayData : [Records] = [Records]()
-                                    arrayData.append(objRecord)
-                                    self.diccMobileDataConsumtion.updateValue(arrayData, forKey: strYear)
-                                }
-                            }
-                        }
+                        self.prepareDicAsPerYearWise(objRecord: objRecord)
                     }
                     
                     self.nextPageUrl = objMobileDataUsage?.result?._links?.next
-                    
                 }
                 else
                 {
                     self.nextPageUrl = nil
                 }
                 
-                completion()
+                completionHandler()
             }
         }
         else
         {
-            completion()
+            completionHandler()
         }
     }
     
 }
+
 

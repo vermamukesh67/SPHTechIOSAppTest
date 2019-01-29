@@ -30,6 +30,9 @@
 		8B76D05222003D01006EF982 /* QuaterInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B76D05022003D01006EF982 /* QuaterInfoTableViewCell.xib */; };
 		8B76D05422003EBC006EF982 /* YearConsumptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D05322003EBC006EF982 /* YearConsumptionView.swift */; };
 		8B76D05622003ECE006EF982 /* YearConsumptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B76D05522003ECE006EF982 /* YearConsumptionView.xib */; };
+		8B76D05B2200563C006EF982 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D0582200563C006EF982 /* DeviceInfo.swift */; };
+		8B76D05C2200563C006EF982 /* UICollectionView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D0592200563C006EF982 /* UICollectionView+Additions.swift */; };
+		8B76D05D2200563C006EF982 /* UITableView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D05A2200563C006EF982 /* UITableView+Additions.swift */; };
 		93031C87C2DD6069866A54AC /* Pods_SPHTechIOSAppTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6703A026B95B746A73D4DEEC /* Pods_SPHTechIOSAppTestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,9 @@
 		8B76D05022003D01006EF982 /* QuaterInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuaterInfoTableViewCell.xib; sourceTree = "<group>"; };
 		8B76D05322003EBC006EF982 /* YearConsumptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearConsumptionView.swift; sourceTree = "<group>"; };
 		8B76D05522003ECE006EF982 /* YearConsumptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearConsumptionView.xib; sourceTree = "<group>"; };
+		8B76D0582200563C006EF982 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		8B76D0592200563C006EF982 /* UICollectionView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Additions.swift"; sourceTree = "<group>"; };
+		8B76D05A2200563C006EF982 /* UITableView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Additions.swift"; sourceTree = "<group>"; };
 		BB056E663371D61B44E0B9CB /* Pods-SPHTechIOSAppTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechIOSAppTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPHTechIOSAppTestTests/Pods-SPHTechIOSAppTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0E78F521B4231602731D48 /* Pods_SPHTechIOSAppTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPHTechIOSAppTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED38AB308F3DE2704A065C7 /* Pods-SPHTechIOSAppTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechIOSAppTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPHTechIOSAppTest/Pods-SPHTechIOSAppTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				8B76D02B22002F04006EF982 /* Storyboards */,
 				8B76D02E22002FC3006EF982 /* Modules */,
 				8B76D03C220031AF006EF982 /* ApiManager */,
+				8B76D0572200563C006EF982 /* Extensions */,
 				8B76D02C22002F2D006EF982 /* AppResources */,
 				8B76D02D22002F4F006EF982 /* DataBase */,
 			);
@@ -301,6 +308,16 @@
 				8B76D05522003ECE006EF982 /* YearConsumptionView.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8B76D0572200563C006EF982 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B76D0582200563C006EF982 /* DeviceInfo.swift */,
+				8B76D0592200563C006EF982 /* UICollectionView+Additions.swift */,
+				8B76D05A2200563C006EF982 /* UITableView+Additions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,6 +552,8 @@
 				8B76CFFA22002C4F006EF982 /* AppDelegate.swift in Sources */,
 				8B76D0392200314C006EF982 /* HomeViewModel.swift in Sources */,
 				8B76D047220033BB006EF982 /* Fields.swift in Sources */,
+				8B76D05C2200563C006EF982 /* UICollectionView+Additions.swift in Sources */,
+				8B76D05B2200563C006EF982 /* DeviceInfo.swift in Sources */,
 				8B76D03E220031AF006EF982 /* NetworkManager.swift in Sources */,
 				8B76D00222002C4F006EF982 /* SPHTechIOSAppTest.xcdatamodeld in Sources */,
 				8B76D03B2200316A006EF982 /* HomeScreenVC.swift in Sources */,
@@ -545,6 +564,7 @@
 				8B76D05422003EBC006EF982 /* YearConsumptionView.swift in Sources */,
 				8B76D04E22003A45006EF982 /* MobileDataWebService.swift in Sources */,
 				8B76D044220033BB006EF982 /* links.swift in Sources */,
+				8B76D05D2200563C006EF982 /* UITableView+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
