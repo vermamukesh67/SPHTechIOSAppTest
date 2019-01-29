@@ -13,14 +13,33 @@
         <!--Mobile Consumtion-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SPHTechIOSAppTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeScreenVC" customModule="SPHTechIOSAppTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d09-Tc-U3Q">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="8Og-7x-F4L"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Go5-y8-g14"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d09-Tc-U3Q" secondAttribute="trailing" id="AVj-D8-gFg"/>
+                            <constraint firstItem="d09-Tc-U3Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CUG-vb-Jec"/>
+                            <constraint firstItem="d09-Tc-U3Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="X9K-3L-q6L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d09-Tc-U3Q" secondAttribute="bottom" id="rsk-8m-COR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mobile Consumtion" id="RCo-yg-p37"/>
+                    <connections>
+                        <outlet property="tblMobileConsumtion" destination="d09-Tc-U3Q" id="AkE-Eb-VhR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

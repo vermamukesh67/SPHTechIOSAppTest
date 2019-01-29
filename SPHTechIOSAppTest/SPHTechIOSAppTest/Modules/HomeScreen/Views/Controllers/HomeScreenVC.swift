@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeScreenVC: UIViewController {
-
+    @IBOutlet weak var tblMobileConsumtion: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

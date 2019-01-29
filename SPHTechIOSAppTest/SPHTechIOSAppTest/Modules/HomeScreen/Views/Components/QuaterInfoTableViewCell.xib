@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="QuaterInfoTableViewCell" customModule="SPHTechIOSAppTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01m-2k-Sth">
+                        <rect key="frame" x="15" y="10" width="80" height="23.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="2tB-zg-uts"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                        <color key="textColor" red="0.10391872442329797" green="0.16873118404431897" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.128344" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaL-q2-wAL">
+                        <rect key="frame" x="85" y="10" width="220" height="23.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="220" id="gNr-x4-nyr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                        <color key="textColor" red="0.1039187244" green="0.16873118400000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="qaL-q2-wAL" secondAttribute="bottom" constant="10" id="2A2-k1-Wwd"/>
+                    <constraint firstItem="qaL-q2-wAL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="PDU-Vn-jex"/>
+                    <constraint firstAttribute="trailing" secondItem="qaL-q2-wAL" secondAttribute="trailing" constant="15" id="QOk-6L-Coc"/>
+                    <constraint firstItem="01m-2k-Sth" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jbC-3u-5iJ"/>
+                    <constraint firstAttribute="bottom" secondItem="01m-2k-Sth" secondAttribute="bottom" constant="10" id="tob-Sf-hV6"/>
+                    <constraint firstItem="01m-2k-Sth" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="w9h-T0-ser"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblQuarter" destination="01m-2k-Sth" id="Bk4-MO-C9w"/>
+                <outlet property="lblVolume" destination="qaL-q2-wAL" id="rK6-bj-Y4F"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

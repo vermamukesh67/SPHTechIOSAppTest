@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YearConsumptionView" customModule="SPHTechIOSAppTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMp-cw-dg6">
+                    <rect key="frame" x="15" y="10" width="60" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="12z-78-3i9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.03834" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KR-Cd-VKG">
+                    <rect key="frame" x="105" y="10" width="200" height="40"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dti-gS-bet">
+                    <rect key="frame" x="320" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="aJk-hL-brd"/>
+                    </constraints>
+                    <state key="normal" image="expandIcon"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dti-gS-bet" secondAttribute="trailing" constant="15" id="7uw-qS-Rhp"/>
+                <constraint firstItem="HMp-cw-dg6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="8ej-Pq-x0N"/>
+                <constraint firstItem="dti-gS-bet" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="8g8-Ge-TKE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dti-gS-bet" secondAttribute="bottom" constant="10" id="9z2-cy-KZS"/>
+                <constraint firstItem="1KR-Cd-VKG" firstAttribute="leading" secondItem="HMp-cw-dg6" secondAttribute="trailing" constant="30" id="RrV-Fl-NbF"/>
+                <constraint firstItem="1KR-Cd-VKG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="UHL-76-pQG"/>
+                <constraint firstItem="HMp-cw-dg6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="klu-76-jg9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1KR-Cd-VKG" secondAttribute="bottom" constant="10" id="lIM-2Y-7LZ"/>
+                <constraint firstItem="dti-gS-bet" firstAttribute="leading" secondItem="1KR-Cd-VKG" secondAttribute="trailing" constant="15" id="o70-NH-N9N"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HMp-cw-dg6" secondAttribute="bottom" constant="10" id="wFi-Wc-Slb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnExpandCollapse" destination="dti-gS-bet" id="g6U-DN-gS5"/>
+                <outlet property="lblYear" destination="HMp-cw-dg6" id="Yxy-gr-Ero"/>
+                <outlet property="lblYearVolume" destination="1KR-Cd-VKG" id="7ph-E4-hLR"/>
+            </connections>
+        </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AP2-SD-pbH">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <nil key="textColor"/>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="242" y="-122"/>
+        </label>
+    </objects>
+    <resources>
+        <image name="expandIcon" width="24" height="24"/>
+    </resources>
+</document>

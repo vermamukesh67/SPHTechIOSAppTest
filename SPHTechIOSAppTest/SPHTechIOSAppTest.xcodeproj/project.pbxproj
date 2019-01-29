@@ -24,6 +24,12 @@
 		8B76D046220033BB006EF982 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D041220033BB006EF982 /* Result.swift */; };
 		8B76D047220033BB006EF982 /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D042220033BB006EF982 /* Fields.swift */; };
 		8B76D048220033BB006EF982 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D043220033BB006EF982 /* Records.swift */; };
+		8B76D04D22003A45006EF982 /* WebApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D04B22003A45006EF982 /* WebApiManager.swift */; };
+		8B76D04E22003A45006EF982 /* MobileDataWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D04C22003A45006EF982 /* MobileDataWebService.swift */; };
+		8B76D05122003D01006EF982 /* QuaterInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D04F22003D01006EF982 /* QuaterInfoTableViewCell.swift */; };
+		8B76D05222003D01006EF982 /* QuaterInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B76D05022003D01006EF982 /* QuaterInfoTableViewCell.xib */; };
+		8B76D05422003EBC006EF982 /* YearConsumptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D05322003EBC006EF982 /* YearConsumptionView.swift */; };
+		8B76D05622003ECE006EF982 /* YearConsumptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B76D05522003ECE006EF982 /* YearConsumptionView.xib */; };
 		93031C87C2DD6069866A54AC /* Pods_SPHTechIOSAppTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6703A026B95B746A73D4DEEC /* Pods_SPHTechIOSAppTestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +78,12 @@
 		8B76D041220033BB006EF982 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8B76D042220033BB006EF982 /* Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 		8B76D043220033BB006EF982 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
+		8B76D04B22003A45006EF982 /* WebApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebApiManager.swift; sourceTree = "<group>"; };
+		8B76D04C22003A45006EF982 /* MobileDataWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDataWebService.swift; sourceTree = "<group>"; };
+		8B76D04F22003D01006EF982 /* QuaterInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuaterInfoTableViewCell.swift; sourceTree = "<group>"; };
+		8B76D05022003D01006EF982 /* QuaterInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuaterInfoTableViewCell.xib; sourceTree = "<group>"; };
+		8B76D05322003EBC006EF982 /* YearConsumptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearConsumptionView.swift; sourceTree = "<group>"; };
+		8B76D05522003ECE006EF982 /* YearConsumptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearConsumptionView.xib; sourceTree = "<group>"; };
 		BB056E663371D61B44E0B9CB /* Pods-SPHTechIOSAppTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechIOSAppTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPHTechIOSAppTestTests/Pods-SPHTechIOSAppTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0E78F521B4231602731D48 /* Pods_SPHTechIOSAppTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPHTechIOSAppTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED38AB308F3DE2704A065C7 /* Pods-SPHTechIOSAppTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechIOSAppTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPHTechIOSAppTest/Pods-SPHTechIOSAppTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,10 +165,10 @@
 		8B76CFF822002C4F006EF982 /* SPHTechIOSAppTest */ = {
 			isa = PBXGroup;
 			children = (
-				8B76D03C220031AF006EF982 /* ApiManager */,
 				8B76D02A22002E9D006EF982 /* AppDelegate */,
 				8B76D02B22002F04006EF982 /* Storyboards */,
 				8B76D02E22002FC3006EF982 /* Modules */,
+				8B76D03C220031AF006EF982 /* ApiManager */,
 				8B76D02C22002F2D006EF982 /* AppResources */,
 				8B76D02D22002F4F006EF982 /* DataBase */,
 			);
@@ -256,7 +268,8 @@
 		8B76D0382200314C006EF982 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8B76D03A2200316A006EF982 /* HomeScreenVC.swift */,
+				8B76D04A220035A6006EF982 /* Components */,
+				8B76D04922003596006EF982 /* Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,9 +277,30 @@
 		8B76D03C220031AF006EF982 /* ApiManager */ = {
 			isa = PBXGroup;
 			children = (
+				8B76D04C22003A45006EF982 /* MobileDataWebService.swift */,
+				8B76D04B22003A45006EF982 /* WebApiManager.swift */,
 				8B76D03D220031AF006EF982 /* NetworkManager.swift */,
 			);
 			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		8B76D04922003596006EF982 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B76D03A2200316A006EF982 /* HomeScreenVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B76D04A220035A6006EF982 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B76D04F22003D01006EF982 /* QuaterInfoTableViewCell.swift */,
+				8B76D05022003D01006EF982 /* QuaterInfoTableViewCell.xib */,
+				8B76D05322003EBC006EF982 /* YearConsumptionView.swift */,
+				8B76D05522003ECE006EF982 /* YearConsumptionView.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,8 +412,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B76D00722002C50006EF982 /* LaunchScreen.storyboard in Resources */,
+				8B76D05222003D01006EF982 /* QuaterInfoTableViewCell.xib in Resources */,
 				8B76D00422002C50006EF982 /* Assets.xcassets in Resources */,
 				8B76CFFF22002C4F006EF982 /* Main.storyboard in Resources */,
+				8B76D05622003ECE006EF982 /* YearConsumptionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +539,11 @@
 				8B76D00222002C4F006EF982 /* SPHTechIOSAppTest.xcdatamodeld in Sources */,
 				8B76D03B2200316A006EF982 /* HomeScreenVC.swift in Sources */,
 				8B76D046220033BB006EF982 /* Result.swift in Sources */,
+				8B76D05122003D01006EF982 /* QuaterInfoTableViewCell.swift in Sources */,
 				8B76D048220033BB006EF982 /* Records.swift in Sources */,
+				8B76D04D22003A45006EF982 /* WebApiManager.swift in Sources */,
+				8B76D05422003EBC006EF982 /* YearConsumptionView.swift in Sources */,
+				8B76D04E22003A45006EF982 /* MobileDataWebService.swift in Sources */,
 				8B76D044220033BB006EF982 /* links.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
