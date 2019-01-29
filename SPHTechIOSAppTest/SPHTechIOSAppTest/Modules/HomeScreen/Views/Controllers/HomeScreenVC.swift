@@ -64,12 +64,23 @@ extension HomeScreenVC
         {
             return
         }
-        if viewModel.shouldLoadMoreData()
-        {
-            actViewLoader.startAnimating()
-            isRefreshInProgress = true
-            viewModel.loadMoreData()
+        else if NetworkManager.isInterNetExist() == false {
+            let alert = UIAlertController(title: "No Internet connection", message: "Turn on mobile data or use Wi-Fi to access data.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
         }
+        else
+        {
+            if viewModel.shouldLoadMoreData()
+            {
+                actViewLoader.startAnimating()
+                isRefreshInProgress = true
+                viewModel.loadMoreData()
+            }
+        }
+        
     }
     
     func configureCellForIndexPath(indexPath : IndexPath, cell : QuaterInfoTableViewCell)
