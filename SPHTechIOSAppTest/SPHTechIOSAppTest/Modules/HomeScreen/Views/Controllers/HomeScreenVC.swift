@@ -18,6 +18,8 @@ class HomeScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "onboardingView"
+        tblMobileConsumtion.accessibilityIdentifier = "tblMobileConsumtion"
         self.prepareTableView()
         self.setUpNavBar()
         self.observeEvents()
@@ -91,6 +93,8 @@ extension HomeScreenVC
                 }
             }
         }
+        
+        cell.accessibilityIdentifier = "cell\(indexPath.row)"
     }
 }
 
@@ -128,6 +132,7 @@ extension HomeScreenVC : UITableViewDelegate, UITableViewDataSource
         headerView.delegate = self
         headerView.setupUI(strTotalConsumtion: viewModel.getTotalConsumtionForSectionForYear(strYear: viewModel.arrSortedYears[section]), strYear: viewModel.arrSortedYears[section], section : section)
         headerView.displayIconForExpCollapseForSection(intSection: self.selectedSection)
+        headerView.accessibilityIdentifier = "YearConsumptionView\(section)"
         return headerView
         
     }

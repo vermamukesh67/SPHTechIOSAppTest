@@ -32,6 +32,9 @@ class YearConsumptionView: UITableViewHeaderFooterView {
         // handling code
         delegate?.didSelectHeaderInSection(section: sectionNumber)
     }
+    @IBAction func btnExpandCollaspeTapped(_ sender: Any) {
+         delegate?.didSelectHeaderInSection(section: sectionNumber)
+    }
     
     // Reuse Identifier String
     public class var reuseIdentifier: String {
@@ -48,6 +51,7 @@ class YearConsumptionView: UITableViewHeaderFooterView {
     // setup UI
     public func setupUI(strTotalConsumtion : String, strYear : String, section : Int)
     {
+        btnExpandCollapse.accessibilityIdentifier = "btnExpandCollapse\(section)"
         self.sectionNumber = section
         lblYear.text = strYear
         lblYearVolume.text = strTotalConsumtion
