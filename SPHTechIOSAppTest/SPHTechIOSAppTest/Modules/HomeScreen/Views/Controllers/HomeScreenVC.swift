@@ -50,6 +50,7 @@ extension HomeScreenVC
     
     /// Prepare the table view.
     private func prepareTableView() {
+        self.tblMobileConsumtion.tableHeaderView = UIView.init()
     QuaterInfoTableViewCell.registerWithTable(self.tblMobileConsumtion)
     YearConsumptionView.registerHeaderWithTable(self.tblMobileConsumtion)
     }

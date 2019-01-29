@@ -35,6 +35,7 @@ class WebApiManager: NSObject {
                     request.httpBody = try JSONSerialization.data(withJSONObject: parameter as Any, options: .prettyPrinted)
                 } catch let error {
                     print(error.localizedDescription)
+                    completion(nil,nil,error)
                     return
                 }
             }
@@ -42,6 +43,7 @@ class WebApiManager: NSObject {
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 
                 guard let data = data, error == nil else {
+                    completion(nil,response,error)
                     return
                 }
                 
