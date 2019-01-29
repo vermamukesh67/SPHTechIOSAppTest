@@ -18,6 +18,8 @@ class HomeScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = "onboardingView"
+        tblMobileConsumtion.accessibilityIdentifier = "tblMobileConsumtion"
         self.prepareTableView()
         self.setUpNavBar()
         self.observeEvents()
@@ -62,12 +64,23 @@ extension HomeScreenVC
         {
             return
         }
-        if viewModel.shouldLoadMoreData()
-        {
-            actViewLoader.startAnimating()
-            isRefreshInProgress = true
-            viewModel.loadMoreData()
+        else if NetworkManager.isInterNetExist() == false {
+            let alert = UIAlertController(title: "No Internet connection", message: "Turn on mobile data or use Wi-Fi to access data.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
         }
+        else
+        {
+            if viewModel.shouldLoadMoreData()
+            {
+                actViewLoader.startAnimating()
+                isRefreshInProgress = true
+                viewModel.loadMoreData()
+            }
+        }
+        
     }
     
     func configureCellForIndexPath(indexPath : IndexPath, cell : QuaterInfoTableViewCell)
@@ -91,6 +104,8 @@ extension HomeScreenVC
                 }
             }
         }
+        
+        cell.accessibilityIdentifier = "cell\(indexPath.row)"
     }
 }
 
@@ -128,6 +143,7 @@ extension HomeScreenVC : UITableViewDelegate, UITableViewDataSource
         headerView.delegate = self
         headerView.setupUI(strTotalConsumtion: viewModel.getTotalConsumtionForSectionForYear(strYear: viewModel.arrSortedYears[section]), strYear: viewModel.arrSortedYears[section], section : section)
         headerView.displayIconForExpCollapseForSection(intSection: self.selectedSection)
+        headerView.accessibilityIdentifier = "YearConsumptionView\(section)"
         return headerView
         
     }
