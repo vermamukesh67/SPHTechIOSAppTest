@@ -19,6 +19,11 @@
 		8B76D0392200314C006EF982 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D0372200314C006EF982 /* HomeViewModel.swift */; };
 		8B76D03B2200316A006EF982 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D03A2200316A006EF982 /* HomeScreenVC.swift */; };
 		8B76D03E220031AF006EF982 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D03D220031AF006EF982 /* NetworkManager.swift */; };
+		8B76D044220033BB006EF982 /* links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D03F220033BB006EF982 /* links.swift */; };
+		8B76D045220033BB006EF982 /* MobileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D040220033BB006EF982 /* MobileData.swift */; };
+		8B76D046220033BB006EF982 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D041220033BB006EF982 /* Result.swift */; };
+		8B76D047220033BB006EF982 /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D042220033BB006EF982 /* Fields.swift */; };
+		8B76D048220033BB006EF982 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D043220033BB006EF982 /* Records.swift */; };
 		93031C87C2DD6069866A54AC /* Pods_SPHTechIOSAppTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6703A026B95B746A73D4DEEC /* Pods_SPHTechIOSAppTestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +67,11 @@
 		8B76D0372200314C006EF982 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8B76D03A2200316A006EF982 /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		8B76D03D220031AF006EF982 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8B76D03F220033BB006EF982 /* links.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = links.swift; sourceTree = "<group>"; };
+		8B76D040220033BB006EF982 /* MobileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileData.swift; sourceTree = "<group>"; };
+		8B76D041220033BB006EF982 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		8B76D042220033BB006EF982 /* Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
+		8B76D043220033BB006EF982 /* Records.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		BB056E663371D61B44E0B9CB /* Pods-SPHTechIOSAppTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechIOSAppTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPHTechIOSAppTestTests/Pods-SPHTechIOSAppTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0E78F521B4231602731D48 /* Pods_SPHTechIOSAppTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPHTechIOSAppTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED38AB308F3DE2704A065C7 /* Pods-SPHTechIOSAppTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechIOSAppTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPHTechIOSAppTest/Pods-SPHTechIOSAppTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +236,11 @@
 		8B76D0352200314C006EF982 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8B76D042220033BB006EF982 /* Fields.swift */,
+				8B76D03F220033BB006EF982 /* links.swift */,
+				8B76D040220033BB006EF982 /* MobileData.swift */,
+				8B76D043220033BB006EF982 /* Records.swift */,
+				8B76D041220033BB006EF982 /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,11 +495,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B76D045220033BB006EF982 /* MobileData.swift in Sources */,
 				8B76CFFA22002C4F006EF982 /* AppDelegate.swift in Sources */,
 				8B76D0392200314C006EF982 /* HomeViewModel.swift in Sources */,
+				8B76D047220033BB006EF982 /* Fields.swift in Sources */,
 				8B76D03E220031AF006EF982 /* NetworkManager.swift in Sources */,
 				8B76D00222002C4F006EF982 /* SPHTechIOSAppTest.xcdatamodeld in Sources */,
 				8B76D03B2200316A006EF982 /* HomeScreenVC.swift in Sources */,
+				8B76D046220033BB006EF982 /* Result.swift in Sources */,
+				8B76D048220033BB006EF982 /* Records.swift in Sources */,
+				8B76D044220033BB006EF982 /* links.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
