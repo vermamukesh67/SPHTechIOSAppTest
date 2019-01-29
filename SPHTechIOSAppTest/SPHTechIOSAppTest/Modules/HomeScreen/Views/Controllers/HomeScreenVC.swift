@@ -30,7 +30,7 @@ extension HomeScreenVC
 {
     // Function to observe various event call backs from the viewmodel as well as Notifications.
     private func observeEvents() {
-        viewModel.reloadTable = { [weak self] in
+        viewModel.updateUI = { [weak self] in
             DispatchQueue.main.async {
                 self?.tblMobileConsumtion.reloadData()
                 self?.isRefreshInProgress = false
@@ -78,7 +78,7 @@ extension HomeScreenVC
             {
                 let data1 = viewModel.getRecordBasedOnSection(section: indexPath.section, row: indexPath.row - 1)!
                 
-                if  viewModel.iSFirstRecordISGreaterThan(record1: data1, record2: data)
+                if  viewModel.isFirstRecordIsGreaterThanSecondRecord(record1: data1, record2: data)
                 {
                     cell.lblVolume.textColor = .red
                     cell.lblQuarter.textColor = .red

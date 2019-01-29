@@ -12,29 +12,18 @@ class HomeViewModel
 {
     /// Data source for the home page table view.
     var numberOfRecordsToLoadAtOneTime : Int = 50
-    var nextPageUrl : String?
+    var nextApiUrl : String?
     var strResourceId : String? = "a807b7ab-6cad-4aa6-87d0-e283a7353a0f"
     var diccMobileDataConsumtion : [String : [Records]] = [String : [Records]]()
     var arrSortedYears : [String] = [String]()
-    
-    // MARK: Input
-    var viewDidLoad: ()->() = {}
-    
+
     // MARK: Events
-    var reloadTable: ()->() = { }
+    var updateUI: ()->() = { }
     
     init() {
         if let str = strResourceId
         {
-            nextPageUrl = "/api/action/datastore_search?resource_id=\(str)&limit=\(numberOfRecordsToLoadAtOneTime)&offset=14"
-        }
-        
-        viewDidLoad = { [weak self] in
-            self?.getMobileDataConsumptionFromNetwork(completionHandler: {
-                
-                self?.sortDataBasedOnYears()
-                self?.reloadTable()
-            })
+            nextApiUrl = "/api/action/datastore_search?resource_id=\(str)&limit=\(numberOfRecordsToLoadAtOneTime)&offset=14"
         }
     }
     
@@ -43,26 +32,26 @@ class HomeViewModel
         diccMobileDataConsumtion.removeAll()
         self.getMobileDataConsumptionFromNetwork(completionHandler: { [weak self] in
             self?.sortDataBasedOnYears()
-            self?.reloadTable()
+            self?.updateUI()
         })
     }
     
     // Method to load more data from server
     func loadMoreData() {
         
-        if self.nextPageUrl != nil
+        if self.nextApiUrl != nil
         {
             self.getMobileDataConsumptionFromNetwork(completionHandler: { [weak self] in
                 
                 self?.sortDataBasedOnYears()
-                self?.reloadTable()
+                self?.updateUI()
             })
         }
     }
     
     // Condition to check load more data
     func shouldLoadMoreData() -> Bool {
-        return ( nextPageUrl != nil )
+        return ( nextApiUrl != nil )
     }
     
     // get record based on section and row
@@ -94,13 +83,18 @@ class HomeViewModel
     func getNumberOfRowsForForSection(section : Int) -> Int
         
     {
-        let array : [Records] = diccMobileDataConsumtion[arrSortedYears[section]] ?? [Records]()
-        return array.count
+        if diccMobileDataConsumtion.count > 0, arrSortedYears.count > 0
+        {
+            let array : [Records] = diccMobileDataConsumtion[arrSortedYears[section]] ?? [Records]()
+            return array.count
+        }
+        
+        return 0
     }
     
     // compare the consumtion data , return true if record1 is greater than record2
     
-    func iSFirstRecordISGreaterThan(record1 : Records, record2 : Records) -> Bool
+    func isFirstRecordIsGreaterThanSecondRecord(record1 : Records, record2 : Records) -> Bool
     {
         var isTrue = false
         
@@ -153,7 +147,7 @@ class HomeViewModel
     // Get Mobile Data usage from api
     func getMobileDataConsumptionFromNetwork(completionHandler: @escaping ()->()) {
         
-        if let nexturl = self.nextPageUrl
+        if let nexturl = self.nextApiUrl
         {
             MobileDataApiHandler().getMobileDataUsed(url: nexturl) { (objMobileDataUsage, error) in
                 
@@ -165,11 +159,11 @@ class HomeViewModel
                         self.prepareDicAsPerYearWise(objRecord: objRecord)
                     }
                     
-                    self.nextPageUrl = objMobileDataUsage?.result?._links?.next
+                    self.nextApiUrl = objMobileDataUsage?.result?._links?.next
                 }
                 else
                 {
-                    self.nextPageUrl = nil
+                    self.nextApiUrl = nil
                 }
                 
                 completionHandler()
