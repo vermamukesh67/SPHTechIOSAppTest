@@ -41,7 +41,8 @@ class WebApiManager: NSObject {
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 
-                guard let data = data, error == nil else {                                                                 return
+                guard let data = data, error == nil else {
+                    return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
@@ -51,7 +52,6 @@ class WebApiManager: NSObject {
                 completion(data,response,nil)
             }
             task.resume()
-            
         }
         
     }
