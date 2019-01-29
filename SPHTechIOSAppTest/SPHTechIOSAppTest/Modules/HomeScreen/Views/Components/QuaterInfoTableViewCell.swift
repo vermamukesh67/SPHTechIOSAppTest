@@ -39,6 +39,5 @@ class QuaterInfoTableViewCell: ReusableTableViewCell {
             self.lblQuarter.text = strQ
         }
     }
-    
 }
 

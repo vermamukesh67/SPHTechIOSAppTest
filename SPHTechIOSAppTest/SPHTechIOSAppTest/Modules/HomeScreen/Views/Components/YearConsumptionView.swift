@@ -33,19 +33,19 @@ class YearConsumptionView: UITableViewHeaderFooterView {
         delegate?.didSelectHeaderInSection(section: sectionNumber)
     }
     
-    
-    /// Reuse Identifier String
+    // Reuse Identifier String
     public class var reuseIdentifier: String {
         return "\(self.self)"
     }
     
-    /// Registers the Nib with the provided table
+    // Registers the Nib with the provided table
     public static func registerHeaderWithTable(_ table: UITableView) {
         let bundle = Bundle(for: self)
         let nib = UINib(nibName: self.reuseIdentifier , bundle: bundle)
         table.register(nib, forHeaderFooterViewReuseIdentifier: self.reuseIdentifier)
     }
     
+    // setup UI
     public func setupUI(strTotalConsumtion : String, strYear : String, section : Int)
     {
         self.sectionNumber = section

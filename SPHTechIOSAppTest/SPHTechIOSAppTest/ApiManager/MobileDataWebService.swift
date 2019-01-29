@@ -28,8 +28,9 @@ struct MobileDataApiHandler {
                 let responseModel = try jsonDecoder.decode(MobileData.self, from: data)
                 completion(responseModel,nil)
                 
-            } catch  {
-                print("error trying to convert data to JSON")
+            } catch  let error {
+                print(error.localizedDescription)
+                completion(nil,error)
                 return
             }
             
